@@ -1,0 +1,236 @@
+* {
+	margin: 0px;
+	padding: 0px;
+  font-family: "Rubik", sans-serif;
+	color: white;
+}
+
+body {
+	background-color: var(--neutral-Very-dark-blue);
+	font-size: 16px;
+	box-sizing: border-box;
+	font-weight: 300;
+}
+
+:root {
+	/* Colors */
+	--neutral-Very-dark-blue: hsl(226, 43%, 10%);
+	--neutral-Dark-blue: hsl(235, 46%, 20%);
+	--neutral-Desaturated-blue: hsl(235, 45%, 61%);
+	--neutral-Pale-Blue: hsl(236, 100%, 87%);
+
+	--primary-avatar: hsl(246, 80%, 60%);
+	--primary-work: hsl(15, 100%, 70%);
+	--primary-play: hsl(195, 74%, 62%);
+	--primary-study: hsl(348, 100%, 68%);
+	--primary-exercise: hsl(145, 58%, 55%);
+	--primary-social: hsl(264, 64%, 52%);
+	--primary-self-care: hsl(43, 84%, 65%);
+}
+
+.wrapper {
+	padding: 10px 10px;
+	margin: 5em 0em;
+}
+
+
+.wrapper .card {
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+.wrapper .avatar_container {
+	background-color: var(--neutral-Dark-blue);
+}
+
+.wrapper .avatar_container .avatar {
+	background-color: var(--primary-avatar);
+	display: flex;
+	align-items: center;
+	padding: 2em 1.5em;
+}
+
+.wrapper .avatar_container .avatar .profile_img {
+	border: 0.3em solid white;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 80px;
+	height: 80px;
+	margin-right: 1.5em;
+}
+
+.wrapper .avatar_container .avatar .profile_img  img {
+	width: 100%;
+	height: 100%;
+}
+
+.wrapper .avatar_container .avatar .status_name .name{
+	font-size: 1.8em;
+	letter-spacing: 1px;
+}
+
+.wrapper .avatar_container .avatar .status_name .status{
+	font-size: 1.2em;
+	color: var(--neutral-Pale-Blue);
+	letter-spacing: 1px;
+	padding: 0.5em 0em;
+}
+
+.wrapper .avatar_container .state_buttons {
+	display: flex;
+	justify-content: space-around;
+}
+
+.wrapper .avatar_container .state_buttons .btn {
+	padding: 1em 0.5em;
+	font-size: 1.5em;
+	border: none;
+	background-color: transparent;
+	font-weight: 300;
+	color: var(--neutral-Desaturated-blue);
+	cursor: pointer;
+}
+
+.wrapper .avatar_container .state_buttons .btn:where(.active, :hover) {
+	color: white;
+}
+
+.wrapper .time_track_cards_container {
+	margin-top: 1em;
+}
+.wrapper .time_track_cards_container .card {
+	background-repeat: no-repeat;
+	background-position: top right;
+	display: flex;
+	margin-top: 1.5em;
+}
+
+.wrapper .time_track_cards_container .card .dark_blue {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin-top: 2em;
+	background-color: var(--neutral-Dark-blue);
+	font-size: 1.5em;
+	padding: 1em 1em;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.wrapper .time_track_cards_container .card .dark_blue:hover {
+	background-color: hsl(235, 46%, 30%);
+}
+
+.wrapper .time_track_cards_container .card .dark_blue .time_name_and__ {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 10px 10px;
+}
+
+.wrapper .time_track_cards_container .card .dark_blue .time_hours {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 10px;
+}
+.wrapper .time_track_cards_container .card .dark_blue .time_name {
+	font-weight: 450;
+	letter-spacing: 0.090em;
+}
+
+.wrapper .time_track_cards_container .card .dark_blue .time_hours .time {
+	font-size: 1.8em;
+	font-weight: 300;
+}
+
+.wrapper .time_track_cards_container .card .dark_blue .time_hours .hours_in_specific_time {
+	font-size: 0.7em;
+	color: var(--neutral-Pale-Blue);
+}
+
+.wrapper .time_track_cards_container .work_card {
+	background-image: url('./images/icon-work.svg');
+	background-color: var(--primary-work);
+}
+
+.wrapper .time_track_cards_container .play_card {
+	background-image: url('./images/icon-play.svg');
+	background-color: var(--primary-play);
+}
+
+.wrapper .time_track_cards_container .study_card {
+	background-image: url('./images/icon-study.svg');
+	background-color: var(--primary-study);
+}
+
+.wrapper .time_track_cards_container .exercise_card {
+	background-image: url('./images/icon-exercise.svg');
+	background-color: var(--primary-exercise);
+}
+
+.wrapper .time_track_cards_container .social_card {
+	background-image: url('./images/icon-social.svg');
+	background-color: var(--primary-social);
+}
+
+.wrapper .time_track_cards_container .self_car_card {
+	background-image: url('./images/icon-self-care.svg');
+	background-color: var(--primary-self-care);
+}
+
+@media (min-width: 800px) {
+	.wrapper {
+		display: grid;
+		grid-template-columns: 1fr 3fr;
+		grid-template-rows: 1fr 1fr;
+		gap: 1em;
+	}
+
+	.wrapper .avatar_container {
+		margin-top: 2.3em;
+	}
+
+	.wrapper .avatar_container .avatar {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		border-radius: 20px;;
+	}
+
+	.wrapper .avatar_container .state_buttons {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 1em 1em;
+	}
+
+	.time_track_cards_container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		gap: 1em;
+	}
+
+	.wrapper .time_track_cards_container .card .dark_blue .time_hours {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+
+	.wrapper .time_track_cards_container .card .dark_blue .time_hours .hours_in_specific_time {
+		margin-top: 0.3em;
+	}
+}
+
+
+
+.attribution { font-size: 16px; text-align: center; 
+	position: sticky;  
+	bottom: 0;  
+}
+.attribution a { color: hsl(228, 45%, 44%); }
