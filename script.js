@@ -153,15 +153,16 @@ function LoadRightContent (btnName) {
 		}
 		return promiseData.json()
 	}).then((data) => {
-		for(let i = 0; i < data.length -1; i++) {
+		for(let i = 0; i < data.length; i++) {
 			TimeTrackData.push(data[i])
+      console.log(data[i])
 
 		}
 		if (btnName === "daily") {    
 			TimeTrackHTML = ''
 			TimeTrackData.forEach((each) => {  
 					TimeTrackHTML += `  
-							<div class="card ${each.title.toLowerCase()}_card">  
+							<div class="card ${each.title.toLowerCase() === 'self care'? 'self_car':each.title.toLowerCase()}_card">  
 									<div class="dark_blue">  
 											<div class="time_name_and__">  
 													<p class="time_name">  
@@ -189,9 +190,9 @@ function LoadRightContent (btnName) {
 		else if(btnName === "weekly") {  
 			TimeTrackHTML = '';
 			TimeTrackData.forEach((each) => {  
-
+        console.log(TimeTrackData)
 					TimeTrackHTML += `  
-							<div class="card ${each.title.toLowerCase()}_card">  
+							<div class="card ${each.title.toLowerCase() === 'self care'? 'self_car':each.title.toLowerCase()}_card">  
 									<div class="dark_blue">  
 											<div class="time_name_and__">  
 													<p class="time_name">  
@@ -220,7 +221,7 @@ function LoadRightContent (btnName) {
 			TimeTrackData.forEach((each) => {  
 
 					TimeTrackHTML += `  
-							<div class="card ${each.title.toLowerCase()}_card">  
+							<div class="card ${each.title.toLowerCase() === 'self care'? 'self_car':each.title.toLowerCase()}_card">  
 									<div class="dark_blue">  
 											<div class="time_name_and__">  
 													<p class="time_name">  
